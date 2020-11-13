@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TTI Tracking App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      @media screen and (min-width: 400px) {
+        form {
+          width: 100%;
+          /* The width is 100%, when the viewport is 800px or smaller */
+        }
+        .row_data {
+          width: 100%;
+        }
+      }
+      @media screen and (min-width: 600px) {
+        form {
+          width: 100%;
+          /* The width is 100%, when the viewport is 800px or smaller */
+        }
+        .row_data {
+          width: 100%;
+        }
+      }
+      @media screen and (min-width: 800px) {
+        form {
+          width: 100%;
+        }
+        img {
+          width: 15%;
+          height: 15%;
+        }
+        /* The width is 100%, when the viewport is 800px or smaller */
+
+        .row_data {
+          width: 100%;
+        }
+      }
+
+      form {
+        width: 90%;
+        margin: auto;
+        text-align: left;
+      }
+      header {
+        display: inline-block;
+      }
+      img {
+        width: 15%;
+        height: 15%;
+        margin-right: 0.2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0.2rem;
+        margin: 1.2rem;
+        color: darkcyan;
+      }
+      .row_data {
+        display: grid;
+        margin: 0.5rem;
+        padding: 0.1rem;
+      }
+      label {
+        margin: 0.1rem;
+        padding: 0.1rem;
+        font-weight: bold;
+      }
+      select,
+      input {
+        height: 1.7rem;
+        font-variant: small-caps;
+        border: 1px solid;
+        box-shadow: 1px 1px 1px grey;
+        border-radius: 0.2rem;
+      }
+      select,
+      input:focus {
+        background-color: #8ef5b9;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        background-color: darkcyan;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="https://script.google.com/macros/s/AKfycbxnv7RoBkT9DhtKdPTJnCB8JQfbld0QK1-sR4dDZqK3DBj7ArQ/exec"
+      method="get"
+    >
+      <div class="header">
+        <h1>
+          <img src="./picture/logo.png.jpg" alt="TTI logo" sizes="" srcset="" />
+          MOBILE TRACKING APP
+        </h1>
+      </div>
+      <div class="row_data">
+        <label for="">Select the Factory</label>
+        <select name="Factory" id="">
+          <option value="OP">OP</option>
+          <option value="ANEX">ANEX</option>
+          <option value="WERNER">WERNER</option>
+        </select>
+      </div>
+      <div class="row_data">
+        <label for="">Line</label>
+        <input id="" type="number" name="Line" />
+      </div>
+      <div class="row_data">
+        <label for="">Ship</label>
+        <input id="" type="text" name="Ship" />
+      </div>
+      <div class="row_data">
+        <label for="">Model</label>
+        <input id="" type="number" name="TTVI P/N" />
+      </div>
+      <div class="row_data">
+        <label for="">UPH 11:00 AM</label>
+        <input id="" type="number" name="UPH_11am" />
+      </div>
+      <div class="row_data">
+        <label for="">MP 11:00 AM</label>
+        <input id="" type="number" name="MP_11am" />
+      </div>
+      <div class="row_data">
+        <label for="">UPH 4:00 PM</label>
+        <input id="" type="number" name="UPH_4pm" />
+      </div>
+      <div class="row_data">
+        <label for="">MP_4:00 PM</label>
+        <input id="" type="number" name="MP_4pm" />
+      </div>
+      <div class="row_data">
+        <label for="">Test charger + battery</label>
+        <input id="" type="number" name="Test charger + battery" />
+      </div>
+      <div class="row_data">
+        <label for="">5S's</label>
+        <input id="" type="number" name="5S's" />
+      </div>
+      <div class="row_data">
+        <label for="">Rework</label>
+        <input id="" type="number" name="Rework" />
+      </div>
+      <div class="row_data">
+        <button type="submit">SUBMIT</button>
+      </div>
+    </form>
+  </body>
+</html>
