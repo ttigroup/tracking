@@ -239,7 +239,7 @@
     </div>
     <div class="autocomplete" style="width: 100%">
       <label for="">Line</label>
-      <input id="line" type="text" name="Line" value="" ; required />
+      <input id="line" type="text" name="Line" onfocus="this.value=''" value="" ; required />
     </div>
     <div class="row_data">
       <label for="">Ship</label>
@@ -250,7 +250,7 @@
     </div>
     <div class="autocomplete" style="width: 100%">
       <label for="">Model</label>
-      <input id="myInput" type="text" name="TTVI P/N" value="" placeholder="" />
+      <input id="myInput" type="text" name="TTVI P/N" onfocus="this.value=''" value="" placeholder="" />
     </div>
     <!-- <div class="row_data">
       <label for="">UPH 11:00</label>
@@ -269,13 +269,13 @@
       </tr>
       <tr>
         <td>11:00</td>
-        <td><input id="" type="number" name="UPH_11am" style="width:50%" /></td>
-        <td><input id="" type="number" name="MP_11am" style="width:50%" /></td>
+        <td><input id="" type="number" name="UPH_11am" style="width:50%" onfocus="this.value=''"/></td>
+        <td><input id="" type="number" name="MP_11am" style="width:50%" onfocus="this.value=''"/></td>
       </tr>
       <tr>
         <td>04:00</td>
-        <td><input id="" type="number" name="UPH_4pm" style="width:50%" /></td>
-        <td><input id="" type="number" name="MP_4pm" style="width:50%" /></td>
+        <td><input id="" type="number" name="UPH_4pm" style="width:50%" onfocus="this.value=''"/></td>
+        <td><input id="" type="number" name="MP_4pm" style="width:50%" onfocus="this.value=''"/></td>
       </tr>
     </table>
 
@@ -286,9 +286,9 @@
         <th style="width:33%">Rework</th>
       </tr>
       <tr>
-        <td><input id="" type="number" name="Test charger + battery" style="width:50%" /></td>
-        <td><input id="" type="number" name="5S's" style="width:50%" /></td>
-        <td><input id="" type="number" name="Rework" style="width:50%" /></td>
+        <td><input id="" type="number" name="Test charger + battery" style="width:50%" onfocus="this.value=''"/></td>
+        <td><input id="" type="number" name="5S's" style="width:50%" onfocus="this.value=''"/></td>
+        <td><input id="" type="number" name="Rework" style="width:50%" onfocus="this.value=''"/></td>
 
       </tr>
 
@@ -316,7 +316,7 @@
     </div> -->
     <div class="autocomplete">
       <label for="">Issue</label>
-      <textarea name="Issue" id="ghichu" cols="30" rows="5"></textarea>
+      <textarea name="Issue" id="ghichu" cols="30" rows="5" onfocus="this.value=''"></textarea>
     </div>
     <div id="message" style="
           display: none;
