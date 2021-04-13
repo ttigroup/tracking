@@ -2,1136 +2,626 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TTI Tracking App</title>
-  <link rel="icon" type="image/x-icon" href="./asset/favicon.ico" />
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-  <link rel="stylesheet" href="/resources/demos/style.css" />
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    @media screen and (min-width: 400px) {
-      form {
-        width: 100%;
-        /* The width is 100%, when the viewport is 800px or smaller */
-      }
-
-      .row_data {
-        width: 100%;
-      }
-    }
-
-    @media screen and (min-width: 600px) {
-      form {
-        width: 100%;
-        /* The width is 100%, when the viewport is 800px or smaller */
-      }
-
-      .row_data {
-        width: 100%;
-      }
-    }
-
-    @media screen and (min-width: 800px) {
-      form {
-        width: 100%;
-      }
-
-      img {
-        width: 15%;
-        height: 15%;
-      }
-
-      /* The width is 100%, when the viewport is 800px or smaller */
-
-      .row_data {
-        width: 100%;
-      }
-    }
-
-    form {
-      width: 90%;
-      margin: auto;
-      text-align: left;
-    }
-
-    header {
-      display: inline-block;
-    }
-
-    img {
-      width: 15%;
-      height: 15%;
-      margin-right: 0.2rem;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-      text-align: center;
-      padding: 0.2rem;
-      margin: 1.2rem;
-      color: darkcyan;
-    }
-
-    h6 {
-      text-align: center;
-      word-wrap: break-word;
-      margin: 1rem;
-    }
-
-    .row_data {
-      display: grid;
-      margin: 0.5rem;
-      padding: 0.1rem;
-    }
-
-    label {
-      margin: 0.1rem;
-      padding: 0.1rem;
-      font-weight: bold;
-    }
-
-    select,
-    input {
-      height: 2rem;
-      font-variant: small-caps;
-      border: 1px solid;
-      box-shadow: 1px 1px 1px grey;
-      border-radius: 0.2rem;
-    }
-
-    input:focus {
-      background-color: #8ef5b9;
-    }
-
-    button[type="submit"] {
-      width: 150px;
-      height: 50px;
-      border-radius: 5px;
-      margin: 0 auto;
-      display: block;
-      text-align: center;
-      color: white;
-      font-weight: bold;
-      background-color: darkcyan;
-      border: none;
-      box-shadow: 1px solid;
-    }
-
-    button[type="submit"]:hover {
-      background-color: tomato;
-    }
-
-    a {
-      margin: 0 auto;
-      text-align: center;
-      display: block;
-      font-weight: bold;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    a:hover {
-      color: pink;
-    }
-
-    /* autocompltd */
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font: 16px Arial;
-    }
-
-    /*the container must be positioned relative:*/
-    .autocomplete {
-      position: relative;
-      display: inline-block;
-      display: grid;
-      margin: 0.5rem;
-      padding: 0.1rem;
-    }
-
-    input {
-      border: 1px solid transparent;
-      background-color: #f1f1f1;
-      padding: 10px;
-      font-size: 16px;
-    }
-
-    input[type="text"] {
-      background-color: #f1f1f1;
-      width: 100%;
-    }
-
-    input[type="submit"] {
-      background-color: DodgerBlue;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    table {
-      margin-left: 0.7rem;
-      margin-right: 0.7rem;
-      height: 150px;
-    }
-
-    .autocomplete-items {
-      position: absolute;
-      border: 1px solid #d4d4d4;
-      border-bottom: none;
-      border-top: none;
-      z-index: 99;
-      /*position the autocomplete items to be the same width as the container:*/
-      top: 100%;
-      left: 0;
-      right: 0;
-    }
-
-    .autocomplete-items div {
-      padding: 10px;
-      cursor: pointer;
-      background-color: #fff;
-      border-bottom: 1px solid #d4d4d4;
-    }
-
-    /*when hovering an item:*/
-    .autocomplete-items div:hover {
-      background-color: #e9e9e9;
-    }
-
-    /*when navigating through the items using the arrow keys:*/
-    .autocomplete-active {
-      background-color: DodgerBlue !important;
-      color: #ffffff;
-    }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Resume</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
-<!-- action="https://script.google.com/macros/s/AKfycbxnv7RoBkT9DhtKdPTJnCB8JQfbld0QK1-sR4dDZqK3DBj7ArQ/exec"
-    method="get" -->
 
-<body>
-  <form id="test-form" autocomplete="off">
-    <div class="header">
-      <h1>
-        <img src="logo.png.jpg" alt="TTI logo" sizes="" srcset="" />
-        TTI TRACKING APP
-      </h1>
-    </div>
-    <div class="row_data">
-      <label for="">Factory</label>
-      <select name="Factory" id="">
-        <option value="OP">OP</option>
-        <option value="BW">BW</option>
-        <option value="ANEX">ANEX</option>
-        <option value="WERNER">WERNER</option>
-      </select>
-    </div>
-    <div class="autocomplete" style="width: 100%">
-      <label for="">Line</label>
-      <input id="line" type="text" name="Line" onfocus="this.value=''" value="" ; required />
-    </div>
-    <div class="row_data">
-      <label for="">Ship</label>
-      <select name="Ship" id="" required>
-        <option value="D">D</option>
-        <option value="N">N</option>
-      </select>
-    </div>
-    <div class="autocomplete" style="width: 100%">
-      <label for="">Model</label>
-      <input id="myInput" type="text" name="TTVI P/N" onfocus="this.value=''" value="" placeholder="" />
-    </div>
-    <!-- <div class="row_data">
-      <label for="">UPH 11:00</label>
-      <input id="" type="number" name="UPH_11am" />
-    </div>
-    <div class="row_data">
-      <label for="">MP 11:00</label>
-      <input id="" type="number" name="MP_11am" />
-    </div> -->
-    <!-- aaaaa -->
-    <table style="width:100%; text-align: center;border: 1px solid black">
-      <tr>
-        <th style="width:20%">TIME</th>
-        <th style="width:40%">UPH</th>
-        <th style="width:40%">MP</th>
-      </tr>
-      <tr>
-        <td>11:00</td>
-        <td><input id="" type="number" name="UPH_11am" style="width:50%" onfocus="this.value=''" /></td>
-        <td><input id="" type="number" name="MP_11am" style="width:50%" onfocus="this.value=''" /></td>
-      </tr>
-      <tr>
-        <td>04:00</td>
-        <td><input id="" type="number" name="UPH_4pm" style="width:50%" onfocus="this.value=''" /></td>
-        <td><input id="" type="number" name="MP_4pm" style="width:50%" onfocus="this.value=''" /></td>
-      </tr>
-    </table>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><span class="d-block d-lg-none">PHAM MINH
+                KHA</span><span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                    src="assets/img/profile.jpg" alt="" /></span></a><button class="navbar-toggler" type="button"
+            data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+        <!-- About-->
+        <section class="resume-section" id="about">
+            <div class="resume-section-content">
+                <h1 class="mb-0">PHAM MINH <span class="text-primary">KHA</span></h1>
+                <div class="subheading mb-5">DT 743, BINH HOA, DI AN, BINH DUONG, VIET NAM. TEL: 0355210716. EMAIL: <a
+                        href="mailto:name@email.com">pmkha92@gmail.com</a></div>
+                <p class="lead mb-5">I am a graduate of Engineering in Industrial Management with an extensive work
+                    experience in the
+                    garment industry, Power Tools, Accessories, Outdoor Power Equipment. For the past 6 years, I have
+                    handled
+                    many positions in various corporations: IE staff, IE leader, IE supervisor, LEAN Manufacturing.</p>
+                <p class="lead mb-5">With 6 years of working in the garment industry and outdoor Products have
+                    given me in
+                    depth knowledge on Manufacturing Management, GSD, Incentive Schemes, BOM,
+                    Cost Reduction, Work
+                    Instructions, Methods Improvement, Plant and Machine Layout. </p>
+                    <p class="lead mb-5">
+                        Beside that, I have also programming skill which help to build many applications for data analysis for the companies. Given my extensive work experience, and                    the
+                    hard work I always put in performing my job responsibilities, I believe that I am qualified to take
+                    any position
+                    that you would offer.
+                    </p>
+                <div class="social-icons">
+                    <a class="social-icon" href="https://www.linkedin.com/in/kha-ph%E1%BA%A1m-minh-58aa68153/"><i
+                            class="fab fa-linkedin-in"></i></a>
+                            <!-- <a class="social-icon"
+                        href="https://github.com/minhkhacld"><i class="fab fa-github"></i></a>
+                        <a class="social-icon"
+                        href="#"><i class="fab fa-twitter"></i></a> -->
+                        <a class="social-icon"
+                        href="https://www.facebook.com/phamminh.kha"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Experience-->
+        <section class="resume-section" id="experience">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Experience</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Industrial Engineering (Staff)</h3>
+                        <div class="subheading mb-3">Techtronic Industries Vietnam Manufacturing Company Limited</div>
+                        <div class="subheading mb-3">ABOUT TTI</div>
+                        <p>
+                            Techtronic Industries is a fast-growing world leader in Power Tools, Accessories,
+                            Hand Tools, Outdoor Power Equipment, and Floor Care for Do-It-Yourself (DIY),
+                            professional and industrial users in the home improvement, repair,
+                            maintenance, construction and infrastructure industries.
+                        </p>
+                        <p>
+                            The TTI brands like MILWAUKEE, RYOBI and HOOVER are recognized worldwide for their deep
+                            heritage and cordless product platforms of superior quality, outstanding performance,
+                            safety, productivity and compelling innovation.
+                        </p>
+                        <p>
+                            Website: <a href="https://www.ttigroup.com/">https://www.ttigroup.com/</a>
+                        </p>
+                        <p>
+                            Industries: Power Tools, Accessories, Hand Tools, Outdoor Power Equipment, and Floor Care
+                            for Do-It-Yourself (DIY)
+                        </p>
+                        <p>Company size: 30,000 employees</p>
+                        <div class="subheading mb-3">DUTY</div>
+                        <p>- Building and deploying web application to collect data and generate Productivity Tracking
+                            Report<a href="http://ttigroup.github.io/tracking/"
+                                class="link">(http://ttigroup.github.io/tracking/)</a> - Tools and program use in this app: HTML, CSS, Javascript, Google sheets, Microsoft Excel
+                            .</p>
+                        <p>- Building and deploying web application to collect data for cycle time and line balancing<a
+                                href="http://ttigroup.github.io/tracking/"
+                                class="link">(http://ttigroup.github.io/stopwatch/)</a> - Tools and program use in this app: HTML, CSS, Javascript, Google sheets, Microsoft Excel
+                            .</p>
+                        <p>- Be responsible for Surface Cleaner and Electric Presser Washer products
+                        </p>
+                        <p>
+                            - Work with the team to evaluate the labor cost during new product
+                            introduction, to provide the robust quoted labor requirement, and continue to
+                            drive its reduction after mass production.
+                        </p>
+                        <p>- Define the working instructions during the product's pilot and continue to
+                            maintain and improve it during mass production.
+                        </p>
+                        <p>- Checking BOM versus Work Instruction to make sure use the right material
+                            and identify opportunity for cost saving.
+                        </p>
+                        <p>- Work with Quality Engineers and Production supervisors to identify and solve
+                            problems on daily operations, to study and find out the root causes of problems
+                            and define solutions to prevent them from happening again.
+                        </p>
+                        <p>- Work with Maintenance Engineers/Supervisors to define the robust jigs &
+                            fixtures on production lines and continue to improve them through Poka-Yoke
+                            methodologies.</p>
+                        <p>- Logistics analysis to material flow to drive efficiency improvements.</p>
+                        <p>- Design layout of equipment/material/workspace to illustrate maximum efficiency.
+                        </p>
+                        <p>
+                            - Work with the other team to implement Kaizen activities to optimize the labor cost and
+                            save material costs.
+                        </p>
 
-    <table style="width:100%; text-align: center;border: 1px solid black">
-      <tr>
-        <th style="width:34%">Test Chager/batery</th>
-        <th style="width:33%">5S's</th>
-        <th style="width:33%">Rework</th>
-      </tr>
-      <tr>
-        <td><input id="" type="number" name="Test charger + battery" style="width:50%" onfocus="this.value=''" /></td>
-        <td><input id="" type="number" name="5S's" style="width:50%" onfocus="this.value=''" /></td>
-        <td><input id="" type="number" name="Rework" style="width:50%" onfocus="this.value=''" /></td>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">Sept 2020 - Apr 2021</span></div>
+                </div>
+                <!-- new -->
+                <div class="resume-section-content">
 
-      </tr>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Industrial Engineering Supervisor</h3>
+                            <div class="subheading mb-3">Premier Global (Vietnam) Garment Co. ltd</div>
+                            <div class="subheading mb-3">ABOUT PG</div>
+                            <p>
+                                Premier Global is a Garment Manufacturing, branch of Bowker Asia
+                            </p>
+                            <p>
+                                Website: <a href="https://winhanverky.com/en/">https://winhanverky.com/en/</a>
+                            </p>
+                            <p>
+                                Industries: Textiles
+                            </p>
+                            <p>Company size: 1001-5000 employees</p>
+                            <div class="subheading mb-3">DUTY</div>
+                            <p class="sub-pha">+ Building and deploying application to help the production team
+                                calculate their performance, incentive and planing themselft <a
+                                    href="http://minhkhacld.github.io/maytinh/"
+                                    class="link">(http://minhkhacld.github.io/maytinh/</a> &&
+                                <a href="http://minhkhacld.github.io/smv/"
+                                    class="link">http://minhkhacld.github.io/smv/</a>
+                                .
+                            </p>
+                            <p class="sub-pha">+ Building and deploying application to collect machine downtime data,
+                                preventive maintenance data, auto analysis, generate report which help the manaments
+                                know what is the most machine issue affect to production and action <a
+                                    href="http://minhkhacld.github.io/downtime/"
+                                    class="link">(http://minhkhacld.github.io/downtime/)</a>. </p>
+                            <p class="sub-pha">+ Building and deploying application to collect data of Change Over
+                                Progress
+                                Time and Change Over Time (SMED or Quick Change Over) in production which
+                                help team to analysis the data, report and measure team
+                                performance <a href="http://minhkhacld.github.io/copt/" class="link">(http://
+                                    minhkhacld.github.io/copt/)</a></p>
+                            <p>- Being responsible for calculating, building incentive system for sewing line
+                                operators, line leaders and supervisors</p>
 
-    </table>
-    <!-- aaaaa -->
-    <!-- <div class="row_data">
-      <label for="">UPH 4:00</label>
-      <input id="" type="number" name="UPH_4pm" />
-    </div>
-    <div class="row_data">
-      <label for="">MP 4:00</label>
-      <input id="" type="number" name="MP_4pm" />
-    </div> -->
-    <!-- <div class="row_data">
-      <label for="">Test charger + battery</label>
-      <input id="" type="number" name="Test charger + battery" />
-    </div>
-    <div class="row_data">
-      <label for="">5S's</label>
-      <input id="" type="number" name="5S's" />
-    </div>
-    <div class="row_data">
-      <label for="">Rework</label>
-      <input id="" type="number" name="Rework" />
-    </div> -->
-    <div class="autocomplete">
-      <label for="">Issue</label>
-      <textarea name="Issue" id="ghichu" cols="30" rows="5" onfocus="this.value=''"></textarea>
-    </div>
-    <div id="message" style="
-          display: none;
-          height: 30px;
-          line-height: 30px;
-          margin: 0 auto;
-          text-align: center;
-          font-weight: bold;
-          font-size: 12px;
-          background-color: #34eb71;
-          color: black;
-          margin-bottom: 15px;
-        ">
-      Data have been sent to cloud and local excel file.
-    </div>
-    <div class="row_data">
-      <button type="submit" id="submit-form">SUBMIT</button>
-    </div>
-    <div>
-      <a href="https://docs.google.com/spreadsheets/d/1tkOBqBySOeXbcdNIoMWVKeDHoQhGX6RJT7pZ98VWFrk/edit?usp=sharing">Go
-        to Database</a>
-    </div>
-    <div>
-      <h6>
-        TTI Productivity Tracking application, developed and excuted by TTI IE
-        Team, @All right reserved, version 1.2, released in 25.12.2020
-      </h6>
-    </div>
-  </form>
-  <script>
-    $(function () {
-      var availableTags = [
-        "'095382001",
-        "'095382002",
-        "'095382003",
-        "'095382401",
-        "'095382402",
-        "'095382011",
-        "'095382012",
-        "'095382013",
-        "'095382407",
-        "'095382408",
-        "'095475001",
-        "'095475002DG9",
-        "'095333001",
-        "'095333002",
-        "'095333003",
-        "'095333004",
-        "'095333005",
-        "'095330001",
-        "'095330002",
-        "'095330003",
-        "'095519001",
-        "'095532001",
-        "'095529001DG9",
-        "'095432001",
-        "'095330502",
-        "'095333501",
-        "'095333502",
-        "'095333107",
-        "'095333108",
-        "'095333109",
-        "'095333110",
-        "'095333111",
-        "'095432103",
-        "'095432104",
-        "'095333553",
-        "'095330553",
-        "'095333554",
-        "'095330104",
-        "'095330105",
-        "'095330106",
-        "'095432553",
-        "'095333556",
-        "'095333555",
-        "'095309101",
-        "'095309102",
-        "'095268004",
-        "'095268101",
-        "'095333112",
-        "'095333113",
-        "'095337101",
-        "'095155052",
-        "'095159008",
-        "'095155059",
-        "'095159101",
-        "'095155102",
-        "'095155103",
-        "'095155060",
-        "'095377001",
-        "'095155101",
-        "'095377002",
-        "'095159102",
-        "'095337102",
-        "'095155108",
-        "'095155106",
-        "'095155107",
-        "'095337103",
-        "'095337104",
-        "'095155109",
-        "'095155110",
-        "'095159009",
-        "'095337105",
-        "'095422002DG9",
-        "'095517001DG9",
-        "'095515001DG9",
-        "'095513001DG9",
-        "'095204001DG9",
-        "'095204002DG9",
-        "'095205003DG9",
-        "'095205004DG9",
-        "'095515002DG9",
-        "'095513002DG9",
-        "'095517002DG9",
-        "'095202001DG9",
-        "'095516001DG9",
-        "'095202002DG9",
-        "'095607101DG9",
-        "'095930352",
-        "'095930074",
-        "'095836102DG9",
-        "'095119101",
-        "'095249101",
-        "'095410101",
-        "'095109101",
-        "'095110101",
-        "'095112101",
-        "'095113101",
-        "'095249105",
-        "'095119105",
-        "'095109105",
-        "'095410105",
-        "'095113105",
-        "'095112105",
-        "'095249002",
-        "'095109015",
-        "'095110014",
-        "'095113012",
-        "'095119016",
-        "'095112021",
-        "'095369001",
-        "'095369002",
-        "'095109106",
-        "'095112106",
-        "'095113106",
-        "'095119106",
-        "'095249106",
-        "'095410106",
-        "'308477044",
-        "'095079281",
-        "'095079399",
-        "'095079009",
-        "'308760071",
-        "'095790410",
-        "'095790402",
-        "'095790407",
-        "'095790392",
-        "'095079442",
-        "'095079446",
-        "'308833018",
-        "'308833047",
-        "'095079012",
-        "'308760077",
-        "'095079448",
-        "'095079435",
-        "'095079370",
-        "'095790005",
-        "'095079444",
-        "'095392101",
-        "'095392003",
-        "'095392012",
-        "'095392101",
-        "'095392102",
-        "'095295101DG9",
-        "'095295003DG9",
-        "'095267101",
-        "'095264101",
-        "'095508101DG9",
-        "'095267026",
-        "'095508001DG9",
-        "'095267103",
-        "'095601101DG9",
-        "'095603101",
-        "'095603103",
-        "'095602101DG9",
-        "'095604101DG9",
-        "'095601103",
-        "'095602103",
-        "'095508102",
-        "'095508104DG9",
-        "'095295102",
-        "'095392103",
-        "'095392104",
-        "'095264102",
-        "'095601104DG9",
-        "'095604103DG9",
-        "'095602104DG9",
-        "'095603105",
-        "'095000001DG9",
-        "'095000011",
-        "'095507001DG9",
-        "'095507002",
-        "'095507003DG9",
-        "'095338001",
-        "'095338002",
-        "'095339001",
-        "'095339002",
-        "'095499001DG9",
-        "'095499002",
-        "'095499003DG9",
-        "'095268001",
-        "'095268002",
-        "'095268003",
-        "'095938002",
-        "'095938003",
-        "'095938001",
-        "'095266001",
-        "'095266002",
-        "'095273003",
-        "'095273002",
-        "'095175001",
-        "'095175002",
-        "'095901001",
-        "'095267104",
-        "'095297001DG9",
-        "'095297002",
-        "'095606011",
-        "'095606001",
-        "'095966101",
-        "'095966102",
-        "'095835101",
-        "'095835102DG9",
-        "'095984102",
-        "'095508007DG9",
-        "'095705101",
-        "'095705102DG9",
-        "'095531001DG9",
-        "'095510001",
-        "'095511001DG9",
-        "'025282001",
-        "'025282002",
-        "'025282005",
-        "'025282006",
-        "'025282007",
-        "'025282007A",
-        "'025282008",
-        "'025282009",
-        "'025282010",
-        "'025282011",
-        "'025282016",
-        "'107253101 (Disable)",
-        "'095506001",
-        "'095506002",
-        "'095267105",
-        "'316122001 (Disable)",
-        "'095209101",
-        "'095209102",
-        "'095616001",
-        "'000000000",
-        "'095479101",
-        "'095479102",
-        "'095443001",
-        "'095443002",
-        "'095473002",
-        "'095473001DG9",
-        "'095700101DG9",
-        "'095251101",
-        "'095251102",
-        "'025282118",
-        "'095437001DG9",
-        "'095437102DG9",
-        "'316278001 (Disable)",
-        "'095600101",
-        "'095333557",
-        "'095000002DG9",
-        "'095000012",
-        "'095600102DG9",
-        "'108640001",
-        "'108641001",
-        "'107938043",
-        "'095930340",
-        "'095432554",
-        "'095499101",
-        "'095499102DG9",
-        "'095202103DG9",
-        "'095202104DG9",
-        "'095629001",
-        "'095603106",
-        "'095337106",
-        "'308999073",
-        "'130612001DG9",
-        "'095944001DG9",
-        "'095079461",
-        "'095382409",
-        "'095382410",
-        "'095432107",
-        "'095432108",
-        "'095079330",
-        "'095519002",
-        "'095529002DG9",
-        "'095531002DG9",
-        "'095532002",
-        "'308760072",
-        "'095309106",
-        "'095309105",
-        "'095079456",
-        "'095159011",
-        "'095635001",
-        "'095510002",
-        "'095511002DG9",
-        "'095330107",
-        "'095330108",
-        "'095601105DG9",
-        "'095603107",
-        "'095640001",
-        "'095641001",
-        "'095640002",
-        "'095641002",
-        "'095079437",
-        "'095079439",
-        "'095079441",
-        "'095079447",
-        "'095079452",
-        "'095512001",
-        "'095079508",
-        "'095330555",
-        "'095330556",
-        "'095330561",
-        "'095330562",
-        "'095520001",
-        "'095155112",
-        "'095644001",
-        "'095646001",
-        "'095646002",
-        "'095602105DG9",
-        "'095155111",
-        "'095283101",
-        "'095283102",
-        "'095436001DG9",
-        "'310709027",
-        "'310709026",
-        "'310709025",
-        "'310709028",
-        "'095654001",
-        "'095269001",
-        "'095269002",
-        "'095112108",
-        "'095113108",
-        "'095410108",
-        "'095112107",
-        "'095113107",
-        "'095410107",
-        "'095159012",
-        "'095639002",
-        "'095621001",
-        "'095966104",
-        "'095966105DG9",
-        "'095655001",
-        "'095482001",
-        "'095482002",
-        "'140421003",
-        "'095188101",
-        "'095188102",
-        "'095188103DG9",
-        "'000996005DG9",
-        "'095110103",
-        "'095249103",
-        "'095410103",
-        "'095109103",
-        "'095112103",
-        "'095113103",
-        "'095119103",
-        "'095337107",
-        "'095437005DG9",
-        "'095437004DG9",
-        "'095626001",
-        "'108626001",
-        "'095079451",
-        "'095643001",
-        "'108338003C",
-        "'108339003C",
-        "'095625001",
-        "'000996011DG9",
-        "'095997101DG9",
-        "'000996002DG9",
-        "'095656001",
-        "'095637001",
-        "'095639003",
-        "'095655002",
-        "'095635003",
-        "'130612002DG9",
-        "'095601106DG9",
-        "'095159105",
-        "'095656002",
-        "'095621002",
-        "'095631001",
-        "'025306104",
-        "'095653001",
-        "'095653002",
-        "'095643002",
-        "'095648011",
-        "'095079510",
-        "'095205006",
-        "'095204003",
-        "'095648001",
-        "'095930358",
-        "'095545001",
-        "'095836104DG9",
-        "'095338003",
-        "'095339003",
-        "'095632001",
-        "'095382014",
-        "'095382015",
-        "'095382016",
-        "'095632003",
-        "'095631003",
-        "'095617001",
-        "'095617002",
-        "'000995004",
-        "'095630001",
-        "'095930375",
-        "'095945001DG9",
-        "'000996007",
-        "'000997885",
-        "'000996008",
-        "'000996006",
-        "'095826001",
-        "'000997851",
-        "'095644003",
-        "'095790082",
-        "'095202106",
-        "'000996004",
-        "'025306109",
-        "'095639004",
-        "'095512002",
-        "'095520002",
-        "'095630002",
-        "'095602106DG9",
-        "'095629002",
-        "'095644002",
-        "'095836105DG9",
-        "'095638001",
-        "'095654002",
-        "'000996012DG9",
-        "'000996013DG9",
-        "'095529003",
-        "'095511003",
-        "'000995002",
-        "'025306101",
-        "'095658001DG9",
-        "'095475004DG9",
-        "'095626002",
-        "'025306120",
-        "'025282003",
-        "'025282120",
-        "'025282121",
-        "'025282122",
-        "'095945004",
-        "'095295007",
-        "'095635002",
-        "'025306111",
-        "'095625005",
-        "'025409101",
-        "'095520003",
-        "'095512003",
-        "'095625002",
-        "'095079449",
-        "'095790426",
-        "'000000000",
-        "'310709029",
-        "'095544002",
-        "'095790435",
-        "'095790432",
-        "'095601107",
-        "'095643003",
-        "'095997102",
-        "'095790009",
-        "'095944002",
-        "'108979449",
-        "'095660001",
-        "'095397101DG9",
-        "'095397102",
-        "'095790427",
-        "'095202106DG9",
-        "'095202107DG9",
-        "'095264103",
-        "'095602107",
-        "'095627101",
-        "'095517004DG9",
-        "'095529004DG9",
-        "'095529005DG9",
-        "'095079520",
-        "'095079527",
-        "'000997886",
-        "'095662002",
-        "'025282131",
-        "'025282132",
-        "'025282133",
-        "'025282134",
-        "'025282130",
-        "'025306004",
-        "'025306020",
-        "'108622001C",
-        "'000997621",
-        "'000997828",
-        "'000997854",
-        "'000997668",
-        "'000997855",
-        "'000997669",
-        "'000996016",
-        "'000997829",
-        "'308999082",
-        "'108645001C",
-        "'095432109",
-        "'095432110",
-        "'095333119",
-        "'095333120",
-        "'095892001",
-        "'095949001",
-        "'095510003",
-        "'095511005",
-        "'095519003",
-        "'095529006",
-        "'095621003",
-        "'095528101",
-        "'095948001",
-        "'095835104DG9",
-        "'000999594DG9",
-        "'000999595DG9",
-        "'095450102",
-        "'095622001",
-        "'095450101",
-        "'095079526",
-        "'314363004",
-        "'314363005",
-        "'314363006",
-        "'095645001",
-        "'095585101",
-        "'095514101DG9",
-        "'095514102",
-        "'107514101",
-        "'317168001",
-        "'317168002",
-        "'317168003",
-        "'025282123",
-        "'025282124",
-        "'025282125",
-        "'130615001DG9",
-        "'130615002DG9",
-        "'095545002",
-        "'314458007",
-        "'311280001",
-        "'311280003",
-        "'000996028DG9",
-        "'095079525",
-        "'025282136",
-        "'025282137",
-        "'025282138",
-        "'025282139",
-        "'025282135",
-        "'000996027",
-        "'095930377",
-        "'095930353DG9",
-        "'025306121",
-        "'025306122",
-        "'095079699",
-        "'095000004DG9",
-        "'095000005",
-        "'000996013",
-        "'095944023DG9",
-        "'095382411",
-        "'095382412",
-        "'095382413",
-        "'095382414",
-        "'095382017",
-        "'095382018",
-        "'095382020",
-        "'095382021",
-        "'095382019",
-        "'095382022",
-        "'095475005",
-        "'000000000",
-        "'095333565",
-        "'095333566",
-        "'095333567",
-        "'095432557",
-        "'000000000",
-        "'095432558",
-        "'000996026",
-        "'025282126",
-        "'025282127",
-        "'025282128",
-        "'025282129",
-        "'130612007DG9",
-        "'108397101",
-        "'095330563",
-        "'095330564",
-        "'095330565",
-        "'095330566",
-        "'095333563",
-        "'095333564",
-        "'095155119",
-        "'095337108",
-        "'095337109",
-        "'095337110",
-        "'095155113",
-        "'095155114",
-        "'095155116",
-        "'095155115",
-        "'095155117",
-        "'095155118",
-        "'095309107",
-        "'095309108",
-        "'095309109",
-        "'095330112",
-        "'095330113",
-        "'095333122",
-        "'095330114",
-        "'095333123",
-        "'095333125",
-        "'095432111",
-        "'095432112",
-        "'095333121",
-        "'095333124",
-        "'095159013",
-        "'095159014",
-        "'095159106",
-        "'095159107",
-        "'095515004DG9",
-        "'095516005DG9",
-        "'095835103",
-        "'139612007DG9",
-        "'130612009DG9",
-        "'139612009DG9",
-        "'095333126",
-        "'095333127",
-        "'095432113",
-        "'095432114",
-        "'095079700",
+                            <p>- Being responsible for improving efficiency, produce minute, RFT and OTD in specific
+                                lines by the use of Bottle neck, Tatk time, Line balancing, Kaizen. </p>
+                            <p>
+                                - Data collection and analysis system to identify opportunities for
+                                improvement:
+                            </p>
 
-      ];
-      $("#myInput").autocomplete({
-        source: availableTags,
-      });
-    });
+                            <p class="sub-pha">+ Building QR code system to control machine inventory by using third
+                                party
+                                application and create the tool for data analysis </p>
 
-    // Nhac line khi nhap
-    $(function () {
-      var linename = [
-        "'8401-A",
-        "'8401-B",
-        "'8402",
-        "'8403",
-        "'8404-B",
-        "'8404-A",
-        "'8405",
-        "'8406",
-        "'8407",
-        "'8408",
-        "'8409",
-        "'8410",
-        "'8411",
-        "'8412",
-        "'8413",
-        "'8414",
-        "'8415",
-        "'8416",       
-        "'8417",
-        "'8418",        
-        "'8419",        
-        "8420",
-        "8421",
-        "8422",
-        "8423",
-        "8424",
-        "8425",
-        "8426",
-        "8427",
-        "8428",
-        "8429",
-        "8430",
-        "8431",
-        "8432",
-        "8433",
-        "8434",
-        "8435",
-        "8436",
-        "8437",
-        "8438",
-        "8439",
-        "W1",
-        "W2",
-        "W3",
-        "W4",
-        "W5",
-        "W6",
-        "W7",
-        "W8",
-        "B101",
-        "B102",
-        "B103",
-        "B104",
-        "B105",
-        "B106",
-        "B107",
-        "B108",
-        "B109",
-        "B110",
-        "B111",
-        "B112",
-        "B113",
-        "B114",
-        "B115",
-        "B116",
-        "B117",
-        "B118",
-        "B119",
-        "B120",
-        "B401",
-        "B402",
-        "B403",
-        "B404",
-        "B405",
-        "B406",
-        "B407",
-        "B408",
-        "B409",
-        "B410",
-        "B411",
-        "B412",
-        "B413",
-        "B414",
-        "B415",
-        "B416",
-        "B417",
-        "B418",
-        "B419",
-        "B420",
-        "B421",
-        "B422",
-        "B423",
-        "B501",
-        "B502",
-        "B503",
-        "B504",
-        "B505",
-        "B506",
-        "B507",
-        "B508",
-        "B509",
-        "B510",
-        "B511",
-        "B512",
-        "B513",
-        "B514",
-        "B515",
-        "B516",
-        "B517",
-        "B518",
-        "B519",
-        "B520",
-        "B521",
-        "B522",
-        "B523",
+                            <p>- Co-ordinate CI, HSE, SEA department to implement CI & Safety project: Relayout
+                                machinery, equipment and manpower in hazard area.
+                            </p>
+                            <p>- Data collection and root cause analysis for lost time by using Pareto chart and
+                                fish bone diagram.</p>
+                            <p>- Develop and maintain Visual controls (Kanban, sign template), Kaizen events.</p>
 
-      ];
-      $("#line").autocomplete({
-        source: linename,
-      });
-    });
-    // Nhac ghi chu khi nhap
-    $(function () {
-      var ghichu = [
-        "Lack of meterial from X to X",
-        "Material issue",
-        "Start line at X",
-        "Changeover at X",
-        "New operators (Y days, Line run with target = UPH * X %)",
-        "Skilled operators run the different product ( Y days, Line run with target = UPH * X %)",
-        "Stop line at X",
-        "Machine breakdown from X to X",
-        "Layout Issue",
-        "WI issue",
-        "Quality issue",
-        "Accident at work",
-      ];
-      $("#ghichu").autocomplete({
-        source: ghichu,
-      });
-    });
-    //aJAX
-    var $form = $("form#test-form"),
-      url =
-        "https://script.google.com/macros/s/AKfycbxnv7RoBkT9DhtKdPTJnCB8JQfbld0QK1-sR4dDZqK3DBj7ArQ/exec";
+                            <p>- 6S training for new operators, audit and advice method to improve 6S in
+                                working workplace.
+                            </p>
+                            <p>- Identify 8 Type of Waste (MUDA) in process flow by observation and study the
+                                work, then suggest ideas to improve and coordinate with related department
+                                to implement the ideal.
+                            </p>
+                            <p>- Involved in the Gemba walk, find problems and sources of waste, recommend
+                                method to improve. </p>
+                            <p>- Arrangement and together with technical department handle Quick Change
+                                over (SMED) team to reduce Change over progress time and Change over time,
+                                follow up Quick Changeover progress and result. </p>
+                            <p>- Providing factory machine requirement, involved in buying, renting machinery
+                                project for factory expansion.</p>
+                            <p>- Involved in the implementation of new Hanger line project, coordinate with
+                                innovation department on machine innovation projects. </p>
+                            <p>- Pushing the team to archive team KPI, weekly KPI review with Manager
+                                regarding Team activities and performance.
+                            </p>
+                            <p>- Weekly providing manpower requirement for Cutting, Numbering, Heat
+                                transfer, Laser, Bonding, Embroidery, Supermarket... sections.</p>
 
-    $("#submit-form").on("click", function (e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "GET",
-        dataType: "json",
-        data: $form.serializeArray(),
-      }).success;
-      // do something
-      $(document).ready(function () {
-        $(document).ready(function () {
-          // var newText = $("#myInput").val().split(" ");
-          $("#message").fadeIn("slow", function () {
-            $("#message").delay(5000).fadeOut();
-          });
-        });
-      });
-      console.log("sent thanh cong")();
-    });
-  </script>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2018 - September 2020</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Industrial Engineering Leader</h3>
+                            <div class="subheading mb-3">Premier Global (Vietnam) Garment Co. ltd</div>
+                            <p>- Factory layout simulation by using Microsoft Visio software and coordinating
+                                with constructor for factory expansion project.
+                            </p>
+                            <p>- Perform time study in Spreading, Cutting, Numbering, Heat transfer to
+                                calculate product making time and manpower requirement.</p>
+                            <p>- Line balancing with the use of Takt Time to solve bottle neck issue in sewing
+                                line.
+                            </p>
+                            <p>- Making sewing line layout: optimizing machine and manpower arrangement.
+                            </p>
+                            <p> - Take part in buying machinery, equipment project by providing data,
+                                suggestion. </p>
+                            <p> - Execute other jobs according to assignment from General Manager.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">May 2017 - August 2018</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Industrial Engineering</h3>
+                            <div class="subheading mb-3">Hansae-TG Vietnam Co. Ltd</div>
+                            <div class="subheading mb-3">ABOUT HANSAE-TG</div>
+                            <p>
+                                Aiming to be the ultimate leader in manufacturing & trading business around the world
+                                for knitted and woven garments.
+                            </p>
+                            <p>
+                                Website: <a href="https://www.hansae.com/">https://www.hansae.com/</a>
+                            </p>
+                            <p>
+                                Industries: Textile, Apparel, Footwear
+                            </p>
+                            <p>Company size: 6000 employees</p>
+                            <div class="subheading mb-3">DUTY</div>
+
+                            <p>- Perform statistical analysis for cost reduction, quality improvement and
+                                improved efficiency: Do data collection from relate documents, use 5WHY, Fish
+                                bone diagram... to analyse the root cause and recommend method to improve.
+                            </p>
+                            <p>- Co-ordinate CICC team (Continuous Improvement Consulting Company) to
+                                build and implement LEAN projects for factory improvements: 6S, AM, TPM,
+                                Quality improvement, Kaizen, inventory system, line balancing: </p>
+                            <p>+ 6S project: Building 6S master timeline, kick off, choose pilot line, do training,
+                                guiding, build standardize, do checking and performance result then apply to
+                                others section.
+                            </p>
+                            <p>+ AM, TPM project: Building standard method instruction for cleaning machine,
+                                setting cleaning machine schedule, making videos instruction, training for
+                                mechanic and operators, checking the implementation and performance
+                                result. </p>
+                            <p>- Being responsible for making SOP, WI, Flowchart. </p>
+                            <p>- Factory layout simulation by using Microsoft Visio software in order to identify
+                                opportunity improve working processes. </p>
+                            <p>- Develop visual control: Kanban, Sign template.
+                            </p>
+                            <p>- Planning and training for employee about Lean projects: 6S, TPM.
+                                Performance result check 6S, TPM activities. </p>
+                            <p>- Being responsible for data processing.</p>
+                            <p> - Execute other jobs according to assignment from LEAN Manager.
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">December 2015 - February 2017</span></div>
+                    </div>
+                </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Education-->
+        <section class="resume-section" id="education">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Education</h2>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">VNUHCM-University Of Science <img style="margin-left:4rem" class="soft-icon"
+                                src="./assets/img/hcmus.png" alt=""></h3>
+                        <div class="subheading mb-3"> Javascript Developer </div>
+                        <p>Score: 7.5 (Good)</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">May 2019 - August 2019</span></div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Can Tho University <img style="margin-left:4rem" class="soft-icon"
+                                src="./assets/img/ctu.png" alt=""></h3>
+                        <div class="subheading mb-3">Industrial Management(THE DEGREE OF ENGINEER)</div>
+                        <p>GPA: 3.29 (Very Good)</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">August 2012 - December 2015</span></div>
+                </div>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Skills-->
+        <section class="resume-section" id="skills">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Skills</h2>
+                <!-- Office -->
+                <div class="subheading mb-3">Microsoft Office</div>
+                <!-- <ul class="list-inline dev-icons">
+                    <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/microsoft-word-2019.png" />
+                    <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/microsoft-excel-2019.png" />
+                    <img class="soft-icon"
+                        src="https://img.icons8.com/fluent/48/000000/microsoft-powerpoint-2019.png" />
+                    <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/microsoft-outlook-2019.png" />
+                    <img class="soft-icon" src="https://img.icons8.com/color/48/000000/microsoft-visio.png" />
+                    <img class="soft-icon" src="https://img.icons8.com/color/48/000000/google-sketchup.png" />
+                    <img class="soft-icon" src="https://img.icons8.com/color/50/000000/autodesk-autocad.png" />
+                    <img class="soft-icon" src="https://img.icons8.com/cute-clipart/64/000000/google-sheets.png" />
+                </ul> -->
+
+<table border="0" width="100%">
+    <tr>
+        <th width="30%" style="overflow-wrap: break-word;"></th>
+        <th width="20%"></th>
+        <th width="50%"></th>
+    </tr> 
+                   
+    <tr>
+        <td> <p class="sub-skill">Word</p></td>
+        <td>
+            <div class="skill">                                   
+                <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/microsoft-word-2019.png" />
+                        </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill word">65%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Excel</p></td>
+        <td>
+            <div class="skill">                                   
+                <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/microsoft-excel-2019.png" />
+                        </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill excel">80%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Power Point</p></td>
+        <td>
+            <div class="skill">                                   
+                <img class="soft-icon"
+                src="https://img.icons8.com/fluent/48/000000/microsoft-powerpoint-2019.png" />
+                        </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill powerpoint">65%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Outlook</p></td>
+        <td>
+            <div class="skill">                                   
+              
+                <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/microsoft-outlook-2019.png" />
+
+                        </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill outlook">65%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Visio</p></td>
+        <td>
+            <div class="skill">                                   
+              
+                <img class="soft-icon" src="https://img.icons8.com/color/48/000000/microsoft-visio.png" />
+                        </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill visio">65%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Sketchup</p></td>
+        <td>
+            <div class="skill">                                   
+              
+                <img class="soft-icon" src="https://img.icons8.com/color/48/000000/google-sketchup.png" />
+            </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill sketchup">40%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Autocad</p></td>
+        <td>
+            <div class="skill">                                   
+              
+                <img class="soft-icon" src="https://img.icons8.com/color/50/000000/autodesk-autocad.png" />
+            </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill autocad">50%</div>
+        </div></td>
+    </tr>
+    <tr>
+        <td> <p class="sub-skill">Google Sheets</p></td>
+        <td>
+            <div class="skill">                                   
+              
+                <img class="soft-icon" src="https://img.icons8.com/cute-clipart/64/000000/google-sheets.png" />
+            </div>
+        </td>
+        <td><div class="progress">
+            <div class="subskill google-sheets">60%</div>
+        </div></td>
+    </tr>
+   
+    
+    
+   
+</table>
+
+                <div class="subheading mb-3">Programming Languages & Tools</div>
+                <ul class="list-inline dev-icons">                 
+                    <table border="0" width="100%">
+                        <tr>
+                            <th width="30%" style="overflow-wrap: break-word"></th>
+                            <th width="20%"></th>
+                            <th width="50%" style="overflow-wrap: break-word"></th>
+                        </tr> 
+                                       
+                        <tr>
+                            <td> <p class="sub-skill">HTML</p></td>
+                            <td>
+                                <div class="skill">                                   
+                                    <img class="soft-icon" src="https://img.icons8.com/color/48/000000/html-5.png" />
+                                            </div>
+                            </td>
+                            <td><div class="progress">
+                                <div class="subskill html">70%</div>
+                            </div></td>
+                        </tr>
+                       
+                        <tr>
+                            <td> <p class="sub-skill">Javascript</p></td>
+                            <td>
+                                <div class="skill"> 
+                                    <img class="soft-icon" src="https://img.icons8.com/color/64/000000/javascript.png" />
+                                  
+                                            </div>
+                            </td>
+                            <td><div class="progress">
+                                <div class="subskill javascript">60%</div>
+                            </div></td>
+                        </tr>
+                        
+                        <tr>
+                            <td> <p class="sub-skill">CSS</p></td>
+                            <td>
+                                <div class="skill"> 
+                                    <img class="soft-icon" src="https://img.icons8.com/color/48/000000/css3.png" />
+
+                                            </div>
+                            </td>
+                            <td><div class="progress">
+                                <div class="subskill css">65%</div>
+                            </div></td>
+                        </tr>
+                     
+                      <tr>
+                        <td> <p class="sub-skill">Nodejs</p></td>
+                        <td>
+                            <div class="skill"> 
+                                <img class="soft-icon" src="https://img.icons8.com/color/48/000000/nodejs.png" />
+
+                                        </div>
+                        </td>
+                        <td><div class="progress">
+                            <div class="subskill nodejs">45%</div>
+                        </div></td>
+                    </tr>
+                        
+                        <tr>
+                          <td> <p class="sub-skill">NPM</p></td>
+                          <td>
+                              <div class="skill"> 
+                                <img class="soft-icon" src="https://img.icons8.com/windows/32/000000/npm.png" />
+
+                                          </div>
+                          </td>
+                          <td><div class="progress">
+                            <div class="subskill npm">45%</div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td> <p class="sub-skill">Github</p></td>
+                        <td>
+                            <div class="skill"> 
+                                <img class="soft-icon" src="https://img.icons8.com/fluent/48/000000/github.png" />
+
+                                        </div>
+                        </td>
+                        <td><div class="progress">
+                            <div class="subskill github">55%</div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td> <p class="sub-skill">Git</p></td>
+                        <td>
+                            <div class="skill"> 
+                                <img class="soft-icon" src="https://img.icons8.com/color/48/000000/git.png" />
+                                        </div>
+                        </td>
+                        <td><div class="progress">
+                            <div class="subskill git">55%</div>  
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td> <p class="sub-skill">Apache Cordova</p></td>
+                        <td>
+                            <div class="skill"> 
+                                <img class="soft-icon" style="width: 100%;" src="./assets/img/Apache_Cordova_Logo.svg.png" />
+
+                                        </div>
+                        </td>
+                        <td><div class="progress">
+                            <div class="subskill cordova">60%</div> 
+                        </div></td>
+                    </tr>
+                    </table>
+                </body>                
+   
+                </ul>
+                <div class="subheading mb-3">PERSONALITY</div>
+                <ul class="fa-ul mb-0">
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>LEAN concept
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>Good communication
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>Excellent conceptual and analytical
+                        skills
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>Effective interpersonal skills
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>Good presentation
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>Ability to work under time pressure
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check"></i></span>Creativity
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Interests-->
+        <section class="resume-section" id="interests">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Interests</h2>
+                <p>I have strong interesting in science and technology. I love innovation and always update new
+                    technology advancements that can help to improve and my job and my life.</p>
+                <p class="mb-0">My favorite sports are jogging, tennis, football.</p>
+            </div>
+        </section>
+        <hr class="m-0" />
+        <!-- Awards-->
+        <section class="resume-section" id="awards">
+            <div class="resume-section-content">
+                <h2 class="mb-5">Awards & Certifications</h2>
+                <ul class="fa-ul mb-0">
+                    <li>
+                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>2019 creative employees
+                        reward (merit and medal) issued by Binh Duong Labor Confederation
+                        <img src="./assets/img/merit.jpg" alt="Merit"><span><img src="./assets/img/medal.jpg"
+                                alt="Medal"></span>
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-certificate text-warning"></i></span>Certified GSD expert
+                        issued by GSD (corporate) Ltd
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
